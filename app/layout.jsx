@@ -9,11 +9,11 @@ export const metadata = {
 
 const RootLayout = ({children}) => {
   return (
-    <html lang='en'>
-    <body className='overflow-x-hidden'>
+    <html className='hide-scrollbar' lang='en'>
+    <body className=' overflow-x-hidden '>
       
 
-        <main className='app'>
+        <main className='app '>
           <Navbar />
           {children}
         </main>
