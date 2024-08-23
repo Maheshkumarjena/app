@@ -46,7 +46,7 @@ const AboutUs = () => {
           
         </Link>
       </div>
-      <div className="relative w-[100%] h-[80vh]  md:w-64 md:h-80 overflow-hidden rounded-xl">
+      <div className="relative w-[100%] h-[60%] sm:h-[70%]  md:w-64 md:h-80 overflow-hidden rounded-xl">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
