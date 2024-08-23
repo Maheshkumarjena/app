@@ -10,8 +10,8 @@ import { faYoutube, faInstagram, faFacebook } from '@fortawesome/free-brands-svg
 const Footer = () => {
   return (
 <>
-<section class="pt-3 pb-7 w-full ">
-    <div class="mx-auto max-w-7xl px-4">
+<section class="pt-3 max-w-[1500px] pb-7 w-full p-6 ">
+    <div class="mx-auto ">
       <div class="grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 divide-gray-200 pb-10 lg:pb-14 border-b-2 border-gray-200">
         <div class="lg:col-span-7 pr-9 xl:pr-16">
           <h5 class="text-lg font-medium text-gray-900 max-md:text-center mb-7">Contact</h5>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </Link>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row items-center max-lg:justify-between gap-8 lg:gap-14 xl:gap-24 pt-14">
+          <div class="flex flex-col md:flex-row items-center max-lg:justify-between gap-8 lg:gap-14 xl:gap-24 pt-14 justify-between ">
             <div class="block">
               <h6 class="text-lg font-medium text-gray-900 mb-7 max-md:text-center">AlumnNexus</h6>
               <ul class="flex flex-col max-md:items-center gap-6">
