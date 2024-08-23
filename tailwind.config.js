@@ -10,8 +10,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        // Define custom font families
+        heading: ['Poppins', 'sans-serif'], // For headings
+        body: ['Roboto', 'sans-serif'], // For body text
+        accent: ['Montserrat', 'sans-serif'], // For accent text
+        code: ['Courier New', 'monospace'], // For code or monospaced text
+        special: ['Dancing Script', 'cursive'], // For special sections
       },
       colors: {
         'primary-orange': '#FF5722',

@@ -15,13 +15,21 @@ const Navbar = () => {
         menu.classList.toggle('removeAnimation');
         document.querySelector(".cross").classList.toggle("hidden")
         document.querySelector(".burger").classList.toggle("hidden")
-        if(menu.classList.contains("addAnimation")){
+        if(menu.classList.contains("hidden")){
+                menu.classList.remove('hidden')
+                
         }
+        else if(!menu.classList.contains("hidden")){
+            setTimeout(() => {
+                menu.classList.add('hidden')
+            }, 200);
+        }
+       
     }
 
   return (
-    <div className='overflow-x-hidden'>
-        <nav className=" navbar bg-white w-[100vw] border-gray-200 py-2.5 bg-white color-gray-900">
+    <div className='overflow-x-hidden '>
+        <nav className=" navbar bg-white w-[100vw] border-gray-200 py-2.5 bg-gray-200 color-gray-900">
     <div className="flex  flex-wrap items-center justify-between max-w-screen-xl px-2 mx-auto">
         <Link href="#" className=" z-50 flex items-center">
             <img src="https://www.svgrepo.com/show/499962/music.svg" className="h-9 mr-3 sm:h-9" alt="AlumNexus Logo"/>
@@ -34,7 +42,7 @@ const Navbar = () => {
             
             <Link href="Login"
                 
-               className=" outline_btn text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-4 py-2 lg:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none">
+               className=" outline_btn text-white bg-purple-700 hover:bg-purple-800 focus:ring-2 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-4 py-2 lg:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none">
                <p>
                <FontAwesomeIcon icon={faUser} className=' mr-3 h-[13px] w-[13px]' />                 </p>
 
@@ -65,10 +73,10 @@ const Navbar = () => {
             </button>
         </div>
         <div className="items-center   justify-between w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-            <ul  className=" ulElement flex  flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 removeAnimation">
+            <ul onClick={()=>{handleBurgerClick()}} className=" ulElement flex hidden lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 removeAnimation">
                 <li>
                     <Link href="/"
-                       className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-[#F8F8F8] rounded lg:bg-transparent lg:p-0">Home</Link>
+                       className="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0">Home</Link>
                 </li>
                 <li>
                     <Link href="About"
