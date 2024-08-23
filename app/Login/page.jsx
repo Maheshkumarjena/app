@@ -5,25 +5,31 @@ import Link from 'next/link';
 
 const Page = () => {
   return (
-    <div className="min-h-[90vh]  flex flex-col justify-center  sm:px-6 lg:px-8 blue_gr">
+    <div className="w-screen h-screen bg-gradient-to-r from-blue-500 to-blue-700 ">
+
+    <div className="min-h-[90vh] max-w-[330px] m-auto flex flex-col justify-center  sm:px-6 lg:px-8 ">
       
-        <div className="flex justify-between ">
-        <button id="StudentsBtn" class=" w-[100px] relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700 rounded-tl-full  overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
+        <div className="flex justify-between rounded-tl-full rounded-tr-full  ">
+
+        <button id="StudentsBtn" class="bg-white rounded-tl-full rounded-tr-full w-[150px] relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
   <span class="absolute inset-0 bg-blue-700 transform -translate-x-full transition-all duration-300 ease-linear group-hover:translate-x-0 z-0"></span>
   <span class="relative text-blue-700 group-hover:text-white z-10">
-  Student
+  <Link href='login/Student'>
+    Student Login
+  </Link>
   </span>
 </button>
 
 
-        <button id="AlumniBtn" class=" w-[100px]   relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700 rounded-tr-full  overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
+        <button id="AlumniBtn" class=" bg-white rounded-tl-full rounded-tr-full w-[150px]   relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
         <span class="absolute inset-0 bg-blue-700 transform translate-x-full transition-all duration-300 ease-linear group-hover:translate-x-0 z-0"></span>
   <span class="relative text-blue-700 group-hover:text-white z-10">
-  Alumni
+<Link href="Login/Alumni">Alumni Login</Link>
   </span>
 </button>
 
         </div>
+
       <div className=" border border-blue-600 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-b-lg sm:px-10">
           <form className="space-y-6" action="#" method="POST">
@@ -123,6 +129,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
