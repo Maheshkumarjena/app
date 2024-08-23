@@ -253,12 +253,6 @@
   color: black;
 }
 
-@media screen and (min-width: 640px) {
-  .head_text {
-    font-size: 3.75rem;
-  }
-}
-
 .orange_gradient {
   background: linear-gradient(to right, #fbbf24, #f97316, #facc15);
   -webkit-background-clip: text;
@@ -281,12 +275,6 @@
   margin-top: 1.25rem;
   font-size: 1.125rem;
   color: #4b5563;
-}
-
-@media screen and (min-width: 640px) {
-  .desc {
-    font-size: 1.25rem;
-  }
 }
 
 .search_input {
