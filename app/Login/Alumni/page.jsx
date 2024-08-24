@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 
 const Page = () => {
   return (
-    <div className="w-screen h-screen bg-gradient-to-r from-blue-500 to-blue-700 ">
+    <div className="w-screen h-screen bg-gradient-to-r from-green-500 to-green-700 ">
 
     <div className="min-h-[90vh] max-w-[330px] m-auto flex flex-col justify-center    ">
       
         <div className="flex justify-between rounded-tl-full rounded-tr-full  ">
 
-        <button id="StudentsBtn" class="bg-white rounded-tl-full rounded-tr-full w-full relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
+        <button id="StudentsBtn" class="bg-white rounded-tl-full rounded-tr-full w-full relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-green-700 border border-green-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
  
     Alumni Login
   
@@ -20,7 +20,7 @@ const Page = () => {
 
 
     </div>
-      <div className=" border min-w-md border-blue-600 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className=" border min-w-md border-green-600 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-b-lg ">
           <form className="space-y-6" action="#" method="POST">
             <div>
@@ -71,7 +71,7 @@ const Page = () => {
               </div>
 
               <div className="text-sm">
-                <Link href="#" className="font-medium text-blue-600 hover:text-blue-500">
+                <Link href="#" className="font-medium text-green-600 hover:text-green-500">
                   Forgot your password?
                 </Link>
               </div>

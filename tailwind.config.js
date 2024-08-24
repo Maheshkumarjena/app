@@ -9,6 +9,33 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          light: '#f7f7f7',
+          dark: '#1c1c1e',
+        },
+        secondary: {
+          light: '#ffffff',
+          dark: '#2c2c2e',
+        },
+        text: {
+          light: '#333333',
+          dark: '#e5e5e7',
+        },
+        accent: {
+          light: '#0066cc',
+          dark: '#ff4081',
+        },
+        button: {
+          light: '#0066cc',
+          dark: '#ff4081',
+        },
+        'button-hover': {
+          light: '#004999',
+          dark: '#e60073',
+        },
+      }
+      ,
       fontFamily: {
         // Define custom font families
         heading: ['Poppins', 'sans-serif'], // For headings

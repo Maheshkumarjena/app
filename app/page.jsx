@@ -25,12 +25,12 @@ const Home = () => {
 
     const fetchData = async () => {
       const data = [
-        { name: 'John Doe', title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
-        { name: 'John Doe', title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
-        { name: 'John Doe', title: 'CEO',  company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        { name: 'John Doe', type: 'Alumni' , title: 'CEO',  company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
         // more alumni objects...
       ];
       setAlumniData(data);

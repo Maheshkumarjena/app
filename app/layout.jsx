@@ -1,35 +1,36 @@
-import React from 'react'
+"use client";
+import React from 'react';
 import "@styles/globals.css";
 import Navbar from '@components/Navbar';
-import { store } from '@Lib/store/store';
 import StoreProvider from './StoreProvider.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '@Lib/store/features/theme/themeSlice';
 
-// export const metadata = {
-//     title: "AlumNexus",
-//     description: "Discover & connect Alumni",
-//   };
-  
+const RootLayout = ({ children }) => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
 
-const RootLayout = ({children}) => {
+  React.useEffect(() => {
+    // Load theme from localStorage if available
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    dispatch(toggleTheme()); // Adjusted to call the correct action
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    // Apply theme to document body
+    document.body.className = theme;
+  }, [theme]);
+
   return (
-
-    
     <html className='hide-scrollbar' lang='en'>
-    <body className=' overflow-x-hidden '>
-        
-
-        <main className='app '>
-    <StoreProvider store={store}>
+      <body className='overflow-x-hidden'>
+        <main className='app'>
           <Navbar />
           {children}
-  </StoreProvider>
         </main>
+      </body>
+    </html>
+  );
+};
 
-    </body>
-
-  </html>  
-
-)
-}
-
-export default RootLayout
+export default RootLayout;
