@@ -10,7 +10,7 @@ import { faYoutube, faInstagram, faFacebook } from '@fortawesome/free-brands-svg
 const Footer = () => {
   return (
 <>
-<section class="pt-3 max-w-[1500px] pb-7 w-full p-6 ">
+<section class="pt-3 max-w-[1500px] pb-7 w-full px-[1px] md:px-4 lg:px-6 mt-[4vw]">
     <div class="mx-auto ">
       <div class="grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 divide-gray-200 pb-10 lg:pb-14 border-b-2 border-gray-200">
         <div class="lg:col-span-7 pr-9 xl:pr-16">

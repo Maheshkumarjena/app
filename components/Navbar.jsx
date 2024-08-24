@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <div className='overflow-x-hidden '>
         <nav className=" navbar bg-white w-[100vw] border-gray-200 py-2.5 bg-gray-200 color-gray-900">
-    <div className="flex  flex-wrap items-center justify-between max-w-[1500px] px-6 mx-auto">
+    <div className="flex  flex-wrap items-center justify-between max-w-[1500px] px-[1px] md:px-4 lg:px-6 mx-auto">
         <Link href="#" className=" z-50 flex items-center">
             <img src="https://www.svgrepo.com/show/499962/music.svg" className="h-9 mr-3 sm:h-9" alt="AlumNexus Logo"/>
             <span z-50 className="self-center hidden xsm:flex text-xl font-semibold whitespace-nowrap text-gray-900">AlumNexus</span>

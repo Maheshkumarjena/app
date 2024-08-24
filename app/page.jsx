@@ -1,13 +1,55 @@
+"use client"
 import React from 'react'
 import Typewriter from '@components/Typewriter'
 import AboutUs from "@components/AboutUs";
 import Footer from '@components/Footer';
+import Alumni from '@components/Alumni';
+import { useState,useEffect } from 'react';
 const Home = () => {
+
+  const [alumniData, setAlumniData] = useState([]);
+  const [noOfImage,setNoOfImage]=useState(4)
+  useEffect(() => {
+    // Simulate an API call
+    const setSomethingForScreenWidth = () => {
+      const screenWidth = window.innerWidth;
+      
+      if (screenWidth >= 450 && screenWidth <= 768) {
+        setNoOfImage(6);
+      } else {
+        setNoOfImage(4);
+      }
+    };
+    
+    
+
+    const fetchData = async () => {
+      const data = [
+        { name: 'John Doe', title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        { name: 'John Doe', title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        { name: 'John Doe', title: 'CEO',  company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+        { name: 'Jane Smith', title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+        // more alumni objects...
+      ];
+      setAlumniData(data);
+    };
+
+    setSomethingForScreenWidth();
+    
+    // Optionally, you can add an event listener to handle screen resizing
+    window.addEventListener('resize', setSomethingForScreenWidth);
+    fetchData();
+  }, []);
+
   return (
     <section className='hide- w-full z-9000  flex-center flex-col'>
         <Typewriter/>
         <AboutUs/>
+        <Alumni alumniData={alumniData} numToShow={noOfImage} />
         <Footer/>
+
     </section>
 )
 

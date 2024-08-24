@@ -31,7 +31,7 @@ const AboutUs = () => {
       };
 
   return (
-    <div className="flex max-w-[1500px] flex-col md:flex-row items-center justify-between gap-2 p-6">
+    <div className="flex max-w-[1500px] flex-col md:flex-row items-center justify-between gap-2 px-[1px] md:px-4 lg:px-6 mt-4">
       <div className="md:w-2/3 text-left">
         <h2 className="text-3xl font-bold mb-4">About Us</h2>
         <p className="text-lg text-gray-700 mb-4">
