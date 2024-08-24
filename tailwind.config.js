@@ -2,6 +2,7 @@
 
 
 module.exports = {
+  darkMode: 'class', // Enables dark mode via a class on the <html> element
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,32 +11,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          light: '#f7f7f7',
-          dark: '#1c1c1e',
+        linkedin: {
+          light: '#0077B5', // LinkedIn Blue for Light Mode
+          dark: '#003F6C',  // Darker Blue for Dark Mode
+          textLight: '#FFFFFF', // Light text color for LinkedIn
+          textDark: '#E1E9EE'   // Darker text color for LinkedIn Dark Mode
         },
-        secondary: {
-          light: '#ffffff',
-          dark: '#2c2c2e',
-        },
-        text: {
-          light: '#333333',
-          dark: '#e5e5e7',
-        },
-        accent: {
-          light: '#0066cc',
-          dark: '#ff4081',
-        },
-        button: {
-          light: '#0066cc',
-          dark: '#ff4081',
-        },
-        'button-hover': {
-          light: '#004999',
-          dark: '#e60073',
-        },
-      }
-      ,
+        backgroundLight: '#F3F6F9', // Background color for light mode
+        backgroundDark: '#1C1C1C', // Background color for dark mode
+      },
+    },
+  variants: {
+    extend: {
+      backgroundColor: ['dark'],
+      borderColor: ['dark'],
+      textColor: ['dark'],
+    },
       fontFamily: {
         // Define custom font families
         heading: ['Poppins', 'sans-serif'], // For headings
