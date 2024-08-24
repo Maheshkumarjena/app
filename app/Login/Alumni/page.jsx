@@ -12,22 +12,12 @@ const Page = () => {
       
         <div className="flex justify-between rounded-tl-full rounded-tr-full  ">
 
-        <button id="StudentsBtn" class="bg-white rounded-tl-full rounded-tr-full w-[150px] relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
-  <span class="absolute inset-0 bg-blue-700 transform -translate-x-full transition-all duration-300 ease-linear group-hover:translate-x-0 z-0"></span>
-  <span class="relative text-blue-700 group-hover:text-white z-10">
-  <Link href='Login/Student'>
-    Student Login
-  </Link>
-  </span>
+        <button id="StudentsBtn" class="bg-white rounded-tl-full rounded-tr-full w-full relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
+ 
+    Alumni Login
+  
 </button>
 
-
-        <button id="AlumniBtn" class=" bg-white rounded-tl-full rounded-tr-full w-[150px]   relative  inline-flex items-center justify-center px-5 py-1.5 text-sm font-support text-blue-700 border border-blue-700   overflow-hidden transition-all duration-300 ease-linear bg-transparent group border-b-0">
-        <span class="absolute inset-0 bg-blue-700 transform translate-x-full transition-all duration-300 ease-linear group-hover:translate-x-0 z-0"></span>
-  <span class="relative text-blue-700 group-hover:text-white z-10">
-<Link href="Login/Alumni">Alumni Login</Link>
-  </span>
-</button>
 
     </div>
       <div className=" border min-w-md border-blue-600 sm:mx-auto sm:w-full sm:max-w-md">
