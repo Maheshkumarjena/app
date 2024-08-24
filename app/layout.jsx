@@ -2,8 +2,7 @@ import React from 'react'
 import "@styles/globals.css";
 import Navbar from '@components/Navbar';
 import { store } from '@Lib/store/store';
-import StoreProvider from './storeProvider';
-
+import StoreProvider from './StoreProvider.jsx';
 
 // export const metadata = {
 //     title: "AlumNexus",
@@ -17,7 +16,7 @@ const RootLayout = ({children}) => {
     
     <html className='hide-scrollbar' lang='en'>
     <body className=' overflow-x-hidden '>
-      
+        
 
         <main className='app '>
     <StoreProvider store={store}>
