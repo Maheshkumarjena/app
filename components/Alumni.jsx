@@ -7,7 +7,7 @@ const Alumni = ({ alumniData, numToShow }) => {
 
     return (
       <div className=' w-[100vw] '>
-      <div className='max-w-[1500px] m-auto px-[1px] md:px-4 ' >
+      <div className='max-w-[1500px] m-auto px-[2vw] md:px-4 ' >
 
         <h2 className=' font-extrabold font-mono text-3xl mt-[8vw] '> Alumni </h2>
         <div className="flex w-[full] flex-wrap justify-between    gap-1 ">

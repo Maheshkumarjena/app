@@ -37,7 +37,7 @@ const AboutUs = () => {
 
   return (
     <div
-  className={`flex max-w-[1500px] m-auto flex-col md:flex-row items-center justify-between gap-2 px-[1px] md:px-4  mt-4 ${
+  className={`flex max-w-[1500px] m-auto flex-col md:flex-row items-center justify-between gap-2 px-[2vw] md:px-4  mt-4 ${
     theme === "light" ? "bg-white text-gray-900" : " text-gray-100"
   }`}
 >
