@@ -19,6 +19,21 @@
   top: 0;
 }
 
+
+@media (max-width: 1024px) {
+  .addAnimation {
+    position: relative;
+    right: 0px !important;
+    transition: right 0.3s;
+  }
+  .removeAnimation {
+    position: relative;
+    right: -110vw !important;
+    transition: right 0.3s;
+  }
+}
+
+
 .hide-scrollbar {
   overflow: auto;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

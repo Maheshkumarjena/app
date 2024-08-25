@@ -14,31 +14,29 @@ const Navbar = () => {
     dispatch(toggleTheme()); // This will update the theme in the store and localStorage
     document.documentElement.classList.toggle("dark", theme === "light");
   };
-  const menu = document.querySelector(".ulElement");
-  const cross = document.querySelector(".cross");
-  const burger = document.querySelector(".burger");
-
-  if (menu && cross && burger) {
-    // Toggle the menu's visibility
-    menu.classList.toggle("hidden");
-
-    // Handle animations and visibility of burger and cross
-    if (menu.classList.contains("hidden")) {
-      menu.classList.add("removeAnimation");
-      setTimeout(() => {
-        menu.classList.add("hidden");
-      }, 200);
-      cross.classList.add("hidden");
-      burger.classList.remove("hidden");
-    } else {
-      menu.classList.remove("removeAnimation");
-      cross.classList.remove("hidden");
-      burger.classList.add("hidden");
-    }
-  } else {
-    console.error("Menu, cross, or burger element not found.");
-  }
+ 
   
+  const  handleBurgerClick =()=>{
+    console.log('handle burger click')
+    const menu = document.querySelector('.ulElement');
+    console.log(menu)
+    menu.classList.toggle('addAnimation');
+    menu.classList.toggle('removeAnimation');
+    document.querySelector(".cross").classList.toggle("hidden")
+    document.querySelector(".burger").classList.toggle("hidden")
+    if(menu.classList.contains("hidden")){
+            menu.classList.remove('hidden')
+            
+    }
+    else if(!menu.classList.contains("hidden")){
+        setTimeout(() => {
+            menu.classList.add('hidden')
+        }, 200);
+    }
+   
+}
+
+
   const theme = useSelector((state) => state.theme);
 
   return (
@@ -151,7 +149,7 @@ const Navbar = () => {
               onClick={() => {
                 handleBurgerClick();
               }}
-              className={`ulElement flex lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ${
+              className={`ulElement  flex hidden lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0  removeAnimation ${
                 theme === "light" ? "text-gray-900" : "text-white"
               }`}
             >
