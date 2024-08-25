@@ -6,14 +6,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
+import { useEffect } from "react";
 
 const Navbar = () => {
-  const dispatch = useDispatch();
-
+    const theme = useSelector((state) => state.theme);
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      }
+    }, []);  
   const handleThemeToggle = () => {
     dispatch(toggleTheme()); // This will update the theme in the store and localStorage
-    document.documentElement.classList.toggle("dark", theme === "light");
+
+    const newTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+
+    // Persist the updated theme in localStorage
+    localStorage.setItem("theme", newTheme);
   };
+
+
  
   
   const  handleBurgerClick =()=>{
@@ -37,7 +52,6 @@ const Navbar = () => {
 }
 
 
-  const theme = useSelector((state) => state.theme);
 
   return (
     <div className="overflow-x-hidden">
