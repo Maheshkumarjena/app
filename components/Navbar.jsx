@@ -144,7 +144,7 @@ const Navbar = () => {
               onClick={() => {
                 handleBurgerClick();
               }}
-              className={`ulElement flex hidden lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ${
+              className={`ulElement hidden lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ${
                 theme === "light" ? "text-gray-900" : "text-white"
               }`}
             >
