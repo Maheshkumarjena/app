@@ -1,233 +1,383 @@
-import React from 'react';
+import React from 'react'
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faLocationDot, faPhone, faEnvelope, faX } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { useDispatch,useSelector } from "react-redux";
+import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
+
+
+
 
 const Footer = () => {
-  const theme = useSelector((state) => state.theme); // Access theme state
+  const theme = useSelector((state) => state.theme);
 
   return (
-    <section
-      className={`pt-3 max-w-[1500px] pb-7 w-full px-[1px] md:px-4 lg:px-6 mt-[4vw] ${
-        theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+<>
+<section
+  className={`pt-3 pb-7 w-full  mt-[4vw] ${
+    theme === "light" ? "bg-white text-gray-900 border-gray-200" : "bg-gray-900 text-gray-100 border-gray-800"
+  }`}
+>
+  <div className="mx-auto max-w-[1500px] px-[1px] md:px-4  m-auto">
+    <div
+      className={`grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 pb-10 lg:pb-14 ${
+        theme === "light" ? "divide-gray-200 border-b-2 border-gray-200" : "divide-gray-800 border-b-2 border-gray-800"
       }`}
     >
-      <div className="mx-auto">
-        <div className={`grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 divide-gray-200 pb-10 lg:pb-14 border-b-2 ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}>
-          <div className="lg:col-span-7 pr-9 xl:pr-16">
-            <h5 className="text-lg font-medium max-md:text-center mb-7">Contact</h5>
-            <div className={`flex flex-col md:flex-row items-center justify-between gap-8 md:gap-2 pb-12 border-b-2 ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}>
-              <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
-                <Link className="flex flex-row h-5 items-center gap-3" href="">
-                  <FontAwesomeIcon icon={faLocationDot} />
-                  <p className="text-base font-normal text-gray-400">61-A, Odisha, India.</p>
-                </Link>
-              </div>
-
-              <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
-                <Link className="flex flex-row h-5 items-center gap-3" href="">
-                  <FontAwesomeIcon icon={faPhone} />
-                  <p className="text-base font-normal text-gray-400">+9xxxxxxxxx</p>
-                </Link>
-              </div>
-
-              <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
-                <Link className="flex flex-row h-5 items-center gap-3" href="">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <p className="text-base font-normal text-gray-400">alumnexus@gmail.com</p>
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center max-lg:justify-between gap-8 lg:gap-14 xl:gap-24 pt-14 justify-between ">
-              <div className="block">
-                <h6 className="text-lg font-medium mb-7 max-md:text-center">AlumnNexus</h6>
-                <ul className="flex flex-col max-md:items-center gap-6">
-                  <li>
-                    <Link
-                      href="/"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="About"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="Alumni"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Alumni
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="Events"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Events
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="block">
-                <h6 className="text-lg font-medium max-md:text-center mb-7">Products</h6>
-                <ul className="flex flex-col max-md:items-center gap-6">
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Figma UI System
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Icons Assets
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Responsive Blocks
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Components Library
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="block">
-                <h6 className="text-lg font-medium max-md:text-center mb-7">Resources</h6>
-                <ul className="flex flex-col max-md:items-center gap-6">
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      FAQs
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Quick Start
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      Documentation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascritp:;"
-                      className={`text-base font-normal transition-all duration-300 ${
-                        theme === 'dark' ? 'hover:text-emerald-400' : 'hover:text-emerald-800'
-                      }`}
-                    >
-                      User Guide
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div className="lg:col-span-7 pr-9 xl:pr-16">
+        <h5
+          className={`text-lg font-medium mb-7 ${
+            theme === "light" ? "text-gray-900" : "text-gray-100"
+          } max-md:text-center`}
+        >
+          Contact
+        </h5>
+        <div
+          className={`flex flex-col md:flex-row items-center justify-between gap-8 md:gap-2 pb-12 ${
+            theme === "light" ? "border-b-2 border-gray-200" : "border-b-2 border-gray-800"
+          }`}
+        >
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <Link className="flex flex-row h-5 items-center gap-3" href="">
+              <FontAwesomeIcon icon={faLocationDot} />
+              <p
+                className={`text-base font-normal ${
+                  theme === "light" ? "text-gray-900" : "text-gray-300"
+                }`}
+              >
+                61-A, Odisha, India.
+              </p>
+            </Link>
           </div>
 
-          <div className="lg:col-span-5 lg:pl-9 xl:pl-16 col-start-1 max-lg:row-start-1">
-            <Link href="" className="mb-9 max-md:mx-auto max-md:flex max-md:w-full items-center justify-center"></Link>
-            <h2 className="font-manrope font-semibold text-2xl max-md:text-center leading-9 mt-9 mb-5">
-              Join Our Newsletter for Exclusive Updates
-            </h2>
-            <p className="text-base font-normal max-md:text-center mb-8">
-              Subscribe to Our Exclusive Newsletter for the Latest Updates
-            </p>
-            <div className="relative max-w-xs max-md:max-w-full max-md:mx-auto mb-5">
-              <input
-                type="text"
-                id="default-search"
-                className={`block w-full md:max-w-[280px] p-4 pl-2 pr-24 text-sm font-normal ${
-                  theme === 'dark' ? 'bg-gray-700 text-white placeholder-gray-300 border-gray-600' : 'bg-white text-gray-900 placeholder-gray-400 border-gray-300'
-                } rounded-full border-2 focus:ring-2 ${
-                  theme === 'dark' ? 'focus:ring-emerald-400' : 'focus:ring-emerald-800'
-                } outline-none`}
-                placeholder="Enter Your Email"
-                required
-              />
-              <button
-                type="submit"
-                className={`absolute right-2.5 bottom-[5px] ${
-                  theme === 'dark' ? 'bg-emerald-400 text-white' : 'bg-emerald-800 text-white'
-                } focus:ring-2 focus:outline-none focus:ring-emerald-800 font-medium rounded-full text-sm px-5 py-2`}
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <Link className="flex flex-row h-5 items-center gap-3" href="">
+              <FontAwesomeIcon icon={faPhone} />
+              <p
+                className={`text-base font-normal ${
+                  theme === "light" ? "text-gray-900" : "text-gray-300"
+                }`}
               >
-                Subscribe
-              </button>
-            </div>
-            <div className="flex gap-5 justify-center md:justify-start max-md:pt-12">
-              <Link href="" className="rounded-full text-white bg-[#3b5998] text-lg h-[30px] w-[30px]">
-                <FontAwesomeIcon icon={faFacebook} />
-              </Link>
-              <Link href="" className="rounded-full text-white bg-[#d62976] text-lg h-[30px] w-[30px]">
-                <FontAwesomeIcon icon={faInstagram} />
-              </Link>
-            </div>
+                +9xxxxxxxxx
+              </p>
+            </Link>
+          </div>
+
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <Link className="flex flex-row h-5 items-center gap-3" href="">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <p
+                className={`text-base font-normal ${
+                  theme === "light" ? "text-gray-900" : "text-gray-300"
+                }`}
+              >
+                alumnexus@gmail.com
+              </p>
+            </Link>
           </div>
         </div>
 
-        <div className="pt-6">
-          <p className="text-center text-sm font-normal text-gray-400">
-            Copyright © 2024 Techical Education Department, Rajasthan, India. All Rights Reserved.
-          </p>
+        <div
+          className={`flex flex-col md:flex-row items-center max-lg:justify-between gap-8 lg:gap-14 xl:gap-24 pt-14 justify-between ${
+            theme === "light" ? "bg-white text-gray-900" : "bg-gray-900 text-gray-100"
+          }`}
+        >
+          <div className="block">
+            <h6
+              className={`text-lg font-medium mb-7 max-md:text-center ${
+                theme === "light" ? "text-gray-900" : "text-gray-100"
+              }`}
+            >
+              AlumnNexus
+            </h6>
+            <ul className="flex flex-col max-md:items-center gap-6">
+              <li>
+                <Link
+                  href="/"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="About"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="Alumni"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Alumni
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="Events"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Events
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="block">
+            <h6
+              className={`text-lg font-medium max-md:text-center mb-7 ${
+                theme === "light" ? "text-gray-900" : "text-gray-100"
+              }`}
+            >
+              Products
+            </h6>
+            <ul className="flex flex-col max-md:items-center gap-6">
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Figma UI System
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Icons Assets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Responsive Blocks
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Components Library
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="block">
+            <h6
+              className={`text-lg font-medium max-md:text-center mb-7 ${
+                theme === "light" ? "text-gray-900" : "text-gray-100"
+              }`}
+            >
+              Resources
+            </h6>
+            <ul className="flex flex-col max-md:items-center gap-6">
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Documentation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Support
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="javascritp:;"
+                  className={`text-base font-normal transition-all duration-300 hover:text-blue-400 ${
+                    theme === "light" ? "text-gray-900" : "text-gray-300"
+                  } ${
+                    theme === "light"
+                      ? "focus-within:outline-0 focus-within:text-blue-400"
+                      : "dark:focus-within:text-emerald-500"
+                  }`}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
+      <div className={`lg:col-span-5 lg:pl-9 xl:pl-16 col-start-1 max-lg:row-start-1 ${
+    theme === "light" ? "bg-white text-gray-900" : "bg-gray-900 text-gray-100"
+}`}>
+  <Link href="" className={`mb-9 max-md:mx-auto max-md:flex max-md:w-full items-center justify-center ${
+    theme === "light" ? "text-gray-900" : "text-gray-100"
+  }`}>
+  </Link>
+  <h2 className={`font-manrope font-semibold text-2xl max-md:text-center leading-9 mt-9 mb-5 ${
+    theme === "light" ? "text-gray-900" : "text-gray-100"
+  }`}>
+    Join Our Newsletter for Exclusive Updates
+  </h2>
+  <p className={`text-base font-normal mb-8 ${
+    theme === "light" ? "text-gray-500" : "text-gray-400"
+  } max-md:text-center`}>
+    Subscribe to Our Exclusive Newsletter for the Latest Updates
+  </p>
+  <div className={`relative max-w-xs max-md:max-w-full max-md:mx-auto mb-5 ${
+    theme === "light" ? "text-gray-500 focus-within:text-gray-900" : "text-gray-400 focus-within:text-gray-100"
+  }`}>
+    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"></div>
+    <input
+      type="text"
+      id="default-search"
+      className={`block w-full md:max-w-xs pr-4 pl-12 py-2.5 text-base font-normal shadow-xs ${
+        theme === "light" ? "text-gray-900  border-gray-300 placeholder-gray-900 bg-gray-200"  : "text-gray-100 bg-gray-700 border-gray-600 placeholder-gray-200"
+      } rounded-full focus:outline-none leading-relaxed`}
+      placeholder="alumnnexus@gmail.com"
+    />
+  </div>
+  <button
+    className={`py-2.5 px-7 max-md:w-full max-md:text-center rounded-full max-md:mx-auto flex items-center justify-center ${
+      theme === "light" ? "bg-blue-600 text-white hover:bg-blue-500" : "bg-blue-400 text-gray-900 hover:bg-blue-500"
+    } text-base font-semibold mb-8 transition-all duration-500`}
+  >
+    Subscribe
+  </button>
+  <div className={`flex items-center max-md:justify-center gap-5 ${
+    theme === "light" ? "text-black" : "text-gray-100"
+  }`}>
+    <Link href="javascript:;" className={`p-2 rounded-full transition-all duration-500 ${
+      theme === "light" ? "text-black hover:bg-blue-600 hover:text-white focus-within:bg-blue-600" : "text-gray-100 hover:bg-blue-500 focus-within:bg-blue-500"
+    }`}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M13.5854 10.7242L19.79 3.66699H18.3197L12.9323 9.79466L8.62939 3.66699H3.6665L10.1733 12.9331L3.6665 20.3337H5.13687L10.8261 13.8626L15.3703 20.3337H20.3332L13.5851 10.7242H13.5854ZM11.5716 13.0147L10.9123 12.092L5.66666 4.75005H7.92505L12.1583 10.6753L12.8176 11.598L18.3204 19.2999H16.062L11.5716 13.0151V13.0147Z"
+          fill="currentColor"
+        />
+      </svg>
+    </Link>
+    <Link href="javascript:;" className={`p-2 h-10 w-10 flex items-center justify-center rounded-full transition-all duration-500 ${
+      theme === "light" ? "text-black hover:bg-blue-600 hover:text-white" : "text-gray-100 hover:bg-blue-500"
+    }`}>
+      <p>
+        <FontAwesomeIcon className='w-[23px] h-[23px]' icon={faFacebook} />
+      </p>
+    </Link>
+    <Link href="javascript:;" className={`px-2 py-1.5 rounded-full transition-all duration-500 ${
+      theme === "light" ? "text-black hover:bg-blue-600 hover:text-white" : "text-gray-100 hover:bg-blue-500"
+    }`}>
+      <p>
+        <FontAwesomeIcon className='w-[23px] h-[23px]' icon={faInstagram} />
+      </p>
+    </Link>
+    <Link href="javascript:;" className={`px-2 py-1.5 rounded-full group transition-all duration-500 ${
+      theme === "light" ? "text-black hover:bg-blue-600 hover:text-white" : "text-gray-100 hover:bg-blue-500"
+    }`}>
+      <p>
+        <FontAwesomeIcon className='w-[23px] h-[23px]' icon={faYoutube} />
+      </p>
+    </Link>
+  </div>
+</div>
 
-export default Footer;
+    </div>
+    
+<div className={`flex items-center justify-center pt-7 ${
+  theme === "light" ? "text-gray-500" : "text-gray-400"
+}`}>
+  <p className="text-sm font-normal">
+    <Link href="https://pagedone.io/" >
+      ©AlumnNexus
+    </Link> 2024, All rights reserved.
+  </p>
+</div>
+
+  </div>
+</section>
+
+
+</>
+ )
+}
+
+export default Footer

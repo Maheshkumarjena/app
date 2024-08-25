@@ -21,6 +21,8 @@ env
 .DS_Store
 *.pem
 
+/js.jsx
+components/js.jsx
 # debug
 npm-debug.log*
 yarn-debug.log*
