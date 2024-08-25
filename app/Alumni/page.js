@@ -2,15 +2,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Alumni from '@components/Alumni';
+import AlumniCard from '@components/AlumniCard';
+import alumniProfiles from '@app/StaticData';
 
 const SearchInput = () => {
   
   const theme = useSelector(state => state.theme);
   return (
-    <div className={`p-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} outline-none focus:outline-none`}>
+<>
+
+    <div className='max-w-1500 px-[2vw] md:px-4 lg:px-6 '>
+
+    <div className={`pt-[3vw] ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} outline-none focus:outline-none`}>
       <div className="relative flex">
         <select 
-          className={`h-10 px-5 rounded-l-full text-sm focus:outline-none outline-none border-2 
+          className={`h-10 px-4  rounded-l-full text-sm focus:outline-none outline-none border-2 
             ${theme === 'dark' ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-500'} 
             border-r-1 cursor-pointer max-h-10 overflow-y-hidden`}>
           <option className="font-medium cursor-pointer" value="filter">filter</option>
@@ -39,6 +46,10 @@ const SearchInput = () => {
       </div>
       
     </div>
+    </div>
+    <Alumni renderAll="true"  />
+    </>
+
   );
 };
 

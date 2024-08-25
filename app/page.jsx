@@ -5,6 +5,7 @@ import Typewriter from '@components/Typewriter'
 import AboutUs from "@components/AboutUs";
 import Footer from '@components/Footer';
 import Alumni from '@components/Alumni';
+import alumniProfiles from './StaticData';
 import { useState,useEffect } from 'react';
 
 const Home = () => {
@@ -25,16 +26,16 @@ const Home = () => {
     
 
     const fetchData = async () => {
-      const data = [
-        { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
-        { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
-        { name: 'John Doe', type: 'Alumni' , title: 'CEO',  company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
-        { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
-        // more alumni objects...
-      ];
-      setAlumniData(data);
+      // const data = [
+      //   { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+      //   { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+      //   { name: 'John Doe', type: 'Alumni' , title: 'CEO', company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+      //   { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+      //   { name: 'John Doe', type: 'Alumni' , title: 'CEO',  company: 'TechCorp', image: '/assets/Images/large-pixabay-267885.jpg' },
+      //   { name: 'Jane Smith', type: 'Alumni' , title: 'CTO', company: 'Innovatech', image: '/assets/Images/pexels-pavel-danilyuk-7942437.jpg' },
+      //   // more alumni objects...
+      // ];
+      setAlumniData(alumniProfiles);
     };
 
     setSomethingForScreenWidth();
@@ -48,7 +49,7 @@ const Home = () => {
     <section className='hide- w-full z-9000  flex-center flex-col'>
         <Typewriter/>
         <AboutUs/>
-        <Alumni alumniData={alumniData} numToShow={noOfImage} />
+        <Alumni renderAll="false" numToShow={noOfImage} />
         <Footer/>
 
     </section>
