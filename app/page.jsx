@@ -1,12 +1,13 @@
 "use client"
+
 import React from 'react'
 import Typewriter from '@components/Typewriter'
 import AboutUs from "@components/AboutUs";
 import Footer from '@components/Footer';
 import Alumni from '@components/Alumni';
 import { useState,useEffect } from 'react';
-const Home = () => {
 
+const Home = () => {
   const [alumniData, setAlumniData] = useState([]);
   const [noOfImage,setNoOfImage]=useState(4)
   useEffect(() => {

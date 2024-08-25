@@ -69,11 +69,11 @@ const Navbar = () => {
 
           <div className="flex items-center lg:order-2">
             <div
-              className={` flex justify-center items-center ${
+              className={` px-[2vw] flex justify-center items-center ${
                 theme === "dark" ? "dark:bg-gray-900" : "bg-white"
               }`}
             >
-              <button
+              <button 
                 onClick={handleThemeToggle}
                 className={` rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center`}
               >
@@ -112,11 +112,11 @@ const Navbar = () => {
               onClick={() => handleBurgerClick()}
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm rounded-[200px] lg:hidden hover:bg-gray-100 focus:outline-none"
+              className="inline-flex items-center p-2 ml-1 text-sm rounded-[200px] lg:hidden hover:bg-gray-100  dark:hover:bg-gray-900 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className="burger w-6 h-6"
+                className="burger w-6 h-6" 
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,8 +158,8 @@ const Navbar = () => {
                   href="/"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   Home
@@ -170,8 +170,8 @@ const Navbar = () => {
                   href="About"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   About
@@ -182,8 +182,8 @@ const Navbar = () => {
                   href="Alumni"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   Alumni
@@ -194,8 +194,8 @@ const Navbar = () => {
                   href="Students"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   Students
@@ -206,8 +206,8 @@ const Navbar = () => {
                   href="Events"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   Events
@@ -218,8 +218,8 @@ const Navbar = () => {
                   href="Resources"
                   className={`block py-2 pl-3 pr-4 ${
                     theme === "light"
-                      ? "text-gray-900 border-b border-gray-100"
-                      : "text-white border-gray-800"
+                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
+                      : "text-white border-gray-800 hover:bg-gray-700"
                   } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
                 >
                   Resources

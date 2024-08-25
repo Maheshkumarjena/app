@@ -15,7 +15,7 @@ const RootLayout = ({children}) => {
 
     
     <html className='hide-scrollbar' lang='en'>
-    <body className=' overflow-x-hidden '>
+    <body className=' dark:bg-gray-900 overflow-x-hidden '>
         
 
         <main className='app '>
