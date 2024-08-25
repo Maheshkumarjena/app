@@ -49,7 +49,7 @@ const Home = () => {
     <section className='hide- w-full z-9000  flex-center flex-col'>
         <Typewriter/>
         <AboutUs/>
-        <Alumni renderAll="false" numToShow={noOfImage} />
+        <Alumni renderAll={false} numToShow={noOfImage} />
         <Footer/>
 
     </section>

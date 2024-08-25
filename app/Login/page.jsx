@@ -109,12 +109,13 @@ const Page = () => {
                             </p>
                         </details>
                     </div>
+                    
                     <div className="py-5">
                         <details className="group">
-                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium ${summaryRotateClass}`}>
-                                <span>What are the documents required for Account verification ?</span>
+                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
+                                <span>What do you need to Login?</span>
                                 <span className={summaryRotateClass}>
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                    <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                         <path d="M6 9l6 6 6-6"></path>
@@ -122,16 +123,17 @@ const Page = () => {
                                 </span>
                             </summary>
                             <p className={`${detailsAnimateClass} mt-3 ${detailsTextColor}`}>
-                                We offer a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied with your subscription within the first 30 days, you can request a full refund. Refunds for subscriptions that have been active for longer than 30 days may be considered on a case-by-case basis.
+                                Springerdata offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.
                             </p>
                         </details>
                     </div>
+                    
                     <div className="py-5">
                         <details className="group">
-                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium ${summaryRotateClass}`}>
-                                <span>How do I cancel my subscription?</span>
+                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
+                                <span>What do you need to Login?</span>
                                 <span className={summaryRotateClass}>
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                    <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                         <path d="M6 9l6 6 6-6"></path>
@@ -139,16 +141,17 @@ const Page = () => {
                                 </span>
                             </summary>
                             <p className={`${detailsAnimateClass} mt-3 ${detailsTextColor}`}>
-                                To cancel your subscription, you can log in to your account and navigate to the subscription management page. From there, you should be able to cancel your subscription and stop future billing.
+                                Springerdata offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.
                             </p>
                         </details>
                     </div>
+                    
                     <div className="py-5">
                         <details className="group">
-                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium ${summaryRotateClass}`}>
-                                <span>Is there a free trial?</span>
+                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
+                                <span>What do you need to Login?</span>
                                 <span className={summaryRotateClass}>
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                    <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                         <path d="M6 9l6 6 6-6"></path>
@@ -156,44 +159,11 @@ const Page = () => {
                                 </span>
                             </summary>
                             <p className={`${detailsAnimateClass} mt-3 ${detailsTextColor}`}>
-                                We offer a free trial of our software for a limited time. During the trial period, you will have access to a limited set of features and functionality, but you will not be charged.
+                                Springerdata offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.
                             </p>
                         </details>
                     </div>
-                    <div className="py-5">
-                        <details className="group">
-                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium ${summaryRotateClass}`}>
-                                <span>How do I contact support?</span>
-                                <span className={summaryRotateClass}>
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                        <path d="M6 9l6 6 6-6"></path>
-                                    </svg>
-                                </span>
-                            </summary>
-                            <p className={`${detailsAnimateClass} mt-3 ${detailsTextColor}`}>
-                                If you need help with our platform or have any other questions, you can contact the company's support team by submitting a support request through the website or by emailing support@ourwebsite.com.
-                            </p>
-                        </details>
-                    </div>
-                    <div className="py-5">
-                        <details className="group">
-                            <summary className={`flex cursor-pointer list-none items-center justify-between font-medium ${summaryRotateClass}`}>
-                                <span>Do you offer any discounts or promotions?</span>
-                                <span className={summaryRotateClass}>
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                        <path d="M6 9l6 6 6-6"></path>
-                                    </svg>
-                                </span>
-                            </summary>
-                            <p className={`${detailsAnimateClass} mt-3 ${detailsTextColor}`}>
-                                We may offer discounts or promotions from time to time. To stay up-to-date on the latest deals and special offers, you can sign up for the company's newsletter or follow it on social media.
-                            </p>
-                        </details>
-                    </div>
+                    
                 </div>
             </div>
         </div>
