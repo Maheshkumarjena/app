@@ -2,7 +2,22 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>Events</div>
+    <div>Events
+      This is the event page
+
+
+
+
+
+
+
+      .........
+
+
+
+
+      ...........
+    </div>
   )
 }
 

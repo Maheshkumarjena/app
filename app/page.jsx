@@ -4,9 +4,10 @@ import React from 'react'
 import Typewriter from '@components/Typewriter'
 import AboutUs from "@components/AboutUs";
 import Footer from '@components/Footer';
-import Alumni from '@components/Alumni';
 import alumniProfiles from './StaticData';
+import Alumni from '@components/Alumni';
 import { useState,useEffect } from 'react';
+import page from './Events/page';
 
 const Home = () => {
   const [alumniData, setAlumniData] = useState([]);
@@ -51,7 +52,7 @@ const Home = () => {
         <AboutUs/>
         <Alumni renderAll={false} numToShow={noOfImage} />
         <Footer/>
-
+        {page}
     </section>
 )
 

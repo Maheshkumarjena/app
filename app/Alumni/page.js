@@ -6,7 +6,7 @@ import Alumni from "@components/Alumni";
 import AlumniCard from "@components/AlumniCard";
 import alumniProfiles from "@app/StaticData";
 
-const SearchInput = () => {
+const AlumniPage = () => {
   const theme = useSelector((state) => state.theme);
   const isDarkMode = theme === "dark";
 
@@ -435,4 +435,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput;
+export default AlumniPage;

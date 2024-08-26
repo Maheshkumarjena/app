@@ -13,13 +13,13 @@ const Alumni = ({ renderAll, numToShow }) => {
 
         <h2 className=' font-extrabold font-mono text-3xl mt-[5vw] '> Alumni </h2>
         <div className="flex w-[full] flex-wrap justify-around md:justify-between   gap-1 ">
-        {dataToRender.map((alum, index) => (
+        {dataToRender.map((alum) => (
                 <AlumniCard
-                    key={index}
                     name={alum.name}
                     title={alum.title}
                     company={alum.company}
                     image={alum.image}
+                    id={alum.id}
                 />
             ))}
       </div>
