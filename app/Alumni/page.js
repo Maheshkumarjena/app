@@ -21,19 +21,19 @@ const SearchInput = () => {
           <div className="relative flex">
             {/* drop down */}
             <div
-              className={`justify-center items-center ${
+              className={`justify-center h-10    items-center ${
                 isDarkMode ? "bg-gray-900" : "bg-white"
               }`}
             >
-              <div className="dropdown inline-block relative">
-                <button
-                  className={`${
+              <details className="dropdown  inline-block relative">
+                <summary
+                  className={`  ${
                     isDarkMode
                       ? "bg-gray-700 text-gray-300"
                       : "bg-gray-300 text-gray-700"
-                  } font-semibold py-2 px-4 rounded inline-flex items-center`}
+                  } font-semibold py-2 px-4  inline-flex items-center`}
                 >
-                  <span className="mr-1">Filter</span>
+                  <span className="mr-1 marker:content-none">Filter</span>
                   <svg
                     className="fill-current h-4 w-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +41,10 @@ const SearchInput = () => {
                   >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
-                </button>
+                </summary>
 
                 <ul
-                  className={`dropdown-menu min-w-fit-content glassmorphism absolute hidden ${
+                  className={`dropdown-menu overflow-y-scroll max-h-[80vh] hidden-scrollbar min-w-[200px] glassmorphism absolute hidden ${
                     isDarkMode ? "text-gray-300" : "text-gray-700"
                   } pt-1`}
                 >
@@ -52,100 +52,354 @@ const SearchInput = () => {
                     <details className="group">
                       <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
                         <span className="flex gap-2">
-                          <span>Prajwal Hallale</span>
+                          <span>IT & Software</span>
                         </span>
+                        <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
                       </summary>
 
                       <article className="px-4 pb-4">
-                        <ul className="flex flex-col gap-4 pl-2 mt-4">
-                          <li className="flex gap-2">
-                            <a href="http://127.0.0.1:8000/user/dashboard">
-                              Dashboard
-                            </a>
-                          </li>
-                          <li className="flex gap-2">
-                            <a href="http://127.0.0.1:8000/user/study-lists">
-                              Study Lists
-                            </a>
-                          </li>
-                          <li className="flex gap-2">
-                            <a href="http://127.0.0.1:8000/user/contribution">
-                              Your contribution
-                            </a>
-                          </li>
-                          <li className="flex gap-2">
-                            <a href="http://127.0.0.1:8000/user/settings">
-                              Settings
-                            </a>
-                          </li>
-                          <form
-                            action="http://127.0.0.1:8000/auth/logout"
-                            method="POST"
-                          >
-                            <input
-                              type="hidden"
-                              name="_token"
-                              value="ymEkCLBFpgkdaSbidUArRsdHbER5DkT6ByS3eJYb"
-                            />
-                            <button
-                              type="submit"
-                              className="text-red-500 text-sm px-2 py-1 hover:bg-red-200 rounded-md"
-                            >
-                              Log Out
-                            </button>
-                          </form>
+                        <ul className="flex flex-col gap-1 pl-2">
+                          <div class="space-y-2">
+                            <label class=" cursor-pointer  hover:bg-white/20 px-2  rounded-md flex justify-between items-center  gap-1">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">AI Enginner</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Full stack Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">ML Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Cybersecurity Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Blockchain  Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                          </div>
                         </ul>
                       </article>
                     </details>
                   </li>
+                    {/* type 2 */}
+
+                    
+                  <li>
+                    <details className="group">
+                      <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span className="flex gap-2">
+                          <span>IT & Software</span>
+                        </span>
+                        <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                      </summary>
+
+                      <article className="px-4 pb-4">
+                        <ul className="flex flex-col gap-1 pl-2">
+                          <div class="space-y-2">
+                            <label class=" cursor-pointer  hover:bg-white/20 px-2  rounded-md flex justify-between items-center  gap-1">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">AI Enginner</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Full stack Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">ML Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Cybersecurity Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Blockchain  Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                          </div>
+                        </ul>
+                      </article>
+                    </details>
+                  </li>
+                    {/* type 2 */}
 
                   <li>
                     <details className="group">
                       <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
                         <span className="flex gap-2">
-                          <span>Recent Documents</span>
+                          <span>IT & Software</span>
                         </span>
+                        <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
                       </summary>
+
                       <article className="px-4 pb-4">
                         <ul className="flex flex-col gap-1 pl-2">
-                          <li>
-                            <a href="">Document title</a>
-                          </li>
-                          <li>
-                            <a href="">Document title</a>
-                          </li>
-                          <li>
-                            <a href="">Document title</a>
-                          </li>
+                          <div class="space-y-2">
+                            <label class=" cursor-pointer  hover:bg-white/20 px-2  rounded-md flex justify-between items-center  gap-1">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">AI Enginner</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Full stack Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">ML Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Cybersecurity Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Blockchain  Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                          </div>
                         </ul>
                       </article>
                     </details>
                   </li>
+                    {/* type 2 */}
 
                   <li>
                     <details className="group">
                       <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
                         <span className="flex gap-2">
-                          <span>Popular Courses</span>
+                          <span>IT & Software</span>
                         </span>
+                        <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
                       </summary>
+
                       <article className="px-4 pb-4">
                         <ul className="flex flex-col gap-1 pl-2">
-                          <li>
-                            <a href="">Course title</a>
-                          </li>
-                          <li>
-                            <a href="">Course title</a>
-                          </li>
-                          <li>
-                            <a href="">Course title</a>
-                          </li>
+                          <div class="space-y-2">
+                            <label class=" cursor-pointer  hover:bg-white/20 px-2  rounded-md flex justify-between items-center  gap-1">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">AI Enginner</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Full stack Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">ML Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Cybersecurity Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+                            <hr></hr>
+                            <label class=" cursor-pointer hover:bg-white/20 px-2  rounded-md flex justify-between items-center ">
+                              <div class="flex items-center ">
+                                <div class="flex items-center"></div>
+                                <h2 class="text-sm">Blockchain  Engineer</h2>
+                              </div>
+                              <input
+                                type="radio"
+                                name="type"
+                                class="checked:border-indigo-500 w-[25px] h-[20px] py-1"
+                              />
+                            </label>
+
+                          </div>
                         </ul>
                       </article>
                     </details>
                   </li>
+                    {/* type 2 */}
+
+
                 </ul>
-              </div>
+              </details>
             </div>
 
             <input
