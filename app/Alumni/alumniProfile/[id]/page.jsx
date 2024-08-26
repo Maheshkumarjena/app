@@ -27,7 +27,7 @@ const AlumniProfile = ({ params }) => {
             className="w-full xl:h-[20rem] lg:h-[18rem] md:h-[16rem] sm:h-[3vw] xs:h-[3rem]"
           />
         <hr className={`${theme==="light" ? " bg-blue-500":" text-bg-gray-500"}`}></hr>
-          <div className="sm:w-[80%] xs:w-[90%] mx-auto flex flex-col ">
+          <div className="sm:w-[80%] xs:w-[90%] mx-auto flex flex-row ">
             <img
               src={alumni.image}
               alt="User Profile"
@@ -114,20 +114,6 @@ const AlumniProfile = ({ params }) => {
                 </div>
               </div>
 
-              <div className="my-10 lg:w-[70%] md:h-[14rem] xs:w-full xs:h-[10rem]">
-                <h1 className="w-fit font-serif my-4 pb-1 pr-2 rounded-b-md border-b-4 border-blue-600 dark:border-b-4 dark:border-yellow-600 dark:text-white lg:text-4xl md:text-3xl xs:text-xl">
-                  My Location
-                </h1>
-
-                <iframe
-                  src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${alumni.location}`}
-                  className="rounded-lg w-full h-full"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
 
             {/* Social Links */}
