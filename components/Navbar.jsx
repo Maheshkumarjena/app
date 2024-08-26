@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="flex flex-wrap items-center justify-between max-w-[1500px] px-[3px] md:px-4  mx-auto">
           <Link href="#" className="z-50 flex items-center">
             <img
-              src="./assets/Images/Group8641.png"
+              src="./assets/Images/logo.png"
               className="h-9 mr-3 sm:h-9"
               alt="AlumNexus Logo"
             />
