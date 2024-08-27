@@ -190,7 +190,8 @@ const Navbar = () => {
                   Alumni
                 </Link>
               </li>
-              <li>
+              {/* student  */}
+              {/* <li>
                 <Link
                   href="Students"
                   className={`block py-2 pl-3 pr-4 ${
@@ -201,7 +202,7 @@ const Navbar = () => {
                 >
                   Students
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="Events"

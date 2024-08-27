@@ -21,13 +21,17 @@ const Footer = () => {
 
   return (
     <>
+
+                            <hr className=" m-auto w-[96%]"></hr>
       <section
-        className={`pt-3 pb-7 w-full  mt-[4vw] ${
+        className={`pt-3 pb-7 w-full  mt-[6vw] ${
           theme === "light"
             ? "bg-white text-gray-900 border-gray-200"
             : "bg-gray-900 text-gray-100 border-gray-800"
         }`}
       >
+
+
         <div className="mx-auto max-w-[1500px] px-[2vw] md:px-4  m-auto">
           <div
             className={`grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 pb-10 lg:pb-14 ${
@@ -36,7 +40,7 @@ const Footer = () => {
                 : "divide-gray-800 border-b-2 border-gray-800"
             }`}
           >
-            <div className="lg:col-span-7 pr-9 xl:pr-16">
+            <div className="lg:col-span-7 lg:pr-6 xl:pr-16">
               <h5
                 className={`text-lg font-medium mb-7 ${
                   theme === "light" ? "text-gray-900" : "text-gray-100"
