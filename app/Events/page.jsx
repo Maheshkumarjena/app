@@ -6,9 +6,9 @@ const Events = () => {
   const isDarkMode = theme === "dark";
 
   return (
-    <div className={` max-w-[1500px] px-[2vw] md:px-4 lg:px-6 ${isDarkMode ? "bg-gray-900" : "bg-[#0073B1]"} p-4`}>
-      <h2 className="text-3xl text-white font-bold mb-12">Events</h2>
-      <div className="flex flex-col grid-cols-9  mx-auto md:grid">
+    <div className={` max-w-[1500px]  ${isDarkMode ? "bg-gray-900" : "bg-white"} p-4`}>
+      <h2 className="text-3xl px-[2vw] md:px-4 lg:px-6 text-white font-bold mb-12">Events</h2>
+      <div className="flex flex-col grid-cols-9  m-auto md:grid px-[2vw] md:px-4 lg:px-6">
       
         <div className="flex md:contents flex-row-reverse">
           <div
@@ -20,7 +20,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the first event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 1
@@ -73,7 +73,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the second event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 2
@@ -93,7 +93,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the first event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 1
@@ -146,7 +146,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the second event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 2
@@ -166,7 +166,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the first event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 1
@@ -219,7 +219,7 @@ const Events = () => {
             <p className="mt-2 leading-6">Description of the second event.</p>
             <span
               className={`absolute text-sm ${
-                isDarkMode ? "text-gray-400" : "text-[#E1E9EE]"
+                isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
             >
               Date 2
