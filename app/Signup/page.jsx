@@ -34,11 +34,11 @@ const Page = () => {
         <div className={`   ${containerClass} max-w-[1500px] `}>
             <div className="mx-auto px-[2vw]  md:px-4 ">
                 <div className={`max-w-xl m-auto ${cardClass}`}>
-                    <h1 className={`text-2xl font-bold mb-6 ${textColor}`}>Login as</h1>
+                    <h1 className={`text-2xl font-bold mb-6 ${textColor}`}>Signup as</h1>
                     <div className="flex flex-col gap-4">
                     {/* Students */}
                       <div className="flex flex-col md:flex-row justify-between  gap-2 sm:gap-4 md:gap-6 lg:gap-10">
-                        <Link href="Login/Student" 
+                        <Link href="Signup/Student" 
                             className={` h-fit w-fit ${buttonClassStudent}`}
                         >
                             Student
@@ -63,7 +63,7 @@ const Page = () => {
                       </div>
                       {/* alumni */}
                       <div className="flex flex-col md:flex-row justify-between gap-2 sm:gap-4 md:gap-6 lg:gap-10">
-                        <Link href="Login/Alumni " 
+                        <Link href="Signup/Alumni " 
                             className={` h-fit w-fit ${buttonClassStudent}`}
                         >
                             Alumni
@@ -87,6 +87,13 @@ const Page = () => {
                     </div>
                       </div>
                     </div>
+                    <div className="signIn mt-10 ">
+                        <Link href="Login" 
+                            className={`  text-white font-bold  rounded-lg shadow-md  transition `}
+                        >
+                            Already have an account ?
+                        </Link>
+                    </div>
                 </div>
     
                 <div className="mx-auto mt-8 grid max-w-xl divide-y divide-neutral-200">
@@ -95,7 +102,7 @@ const Page = () => {
                     <div className="py-5">
                         <details className="group">
                             <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
-                                <span>What do you need to Login?</span>
+                                <span>What do you need to Signup?</span>
                                 <span className={summaryRotateClass}>
                                     <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -113,7 +120,7 @@ const Page = () => {
                     <div className="py-5">
                         <details className="group">
                             <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
-                                <span>What do you need to Login?</span>
+                                <span>What do you need to Signup?</span>
                                 <span className={summaryRotateClass}>
                                     <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -131,7 +138,7 @@ const Page = () => {
                     <div className="py-5">
                         <details className="group">
                             <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
-                                <span>What do you need to Login?</span>
+                                <span>What do you need to Signup?</span>
                                 <span className={summaryRotateClass}>
                                     <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -149,7 +156,7 @@ const Page = () => {
                     <div className="py-5">
                         <details className="group">
                             <summary className={`flex cursor-pointer list-none items-center justify-between font-medium  `}>
-                                <span>What do you need to Login?</span>
+                                <span>What do you need to Signup?</span>
                                 <span className={summaryRotateClass}>
                                     <svg className="summaryRotateClass" fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"

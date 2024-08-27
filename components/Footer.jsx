@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <>
 
-                            <hr className=" m-auto w-[96%]"></hr>
+<hr className=" mt-[3vw] m-auto w-[96%]"></hr>
       <section
         className={`pt-3 pb-7 w-full  mt-[6vw] ${
           theme === "light"

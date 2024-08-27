@@ -22,7 +22,7 @@ const Events = () => {
               className={`absolute text-sm ${
                 isDarkMode ? "text-gray-400" : "text-gray-800"
               } -top-5 left-2 whitespace-nowrap`}
-            >
+            > 
               Date 1
             </span>
           </div>

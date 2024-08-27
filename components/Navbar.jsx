@@ -88,26 +88,44 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className="hidden mt-2 mr-4 sm:inline-block">
-              <span></span>
-            </div>
 
             <Link
-              href="Login"
-              className={`black_btn rounded-[30px] text-white ${
-                theme === "light" ? " text-white" : "bg-emerald-700 text-white"
+              href="/Signup"
+              className={` black_btn  hidden sm:flex  rounded-[20px] text-white ${
+                theme === "light" ? " text-white" : "bg-blue-700 text-white"
               } hover:${
-                theme === "light" ? "bg-gray-900" : "bg-emerald-700"
-              } focus:ring-2 focus:ring-emerald-300 font-medium rounded-lg text-sm px-4 lg:px-4 py-2 lg:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none`}
+                theme === "light" ? "bg-gray-900" : "  text-white"
+              } focus:ring-2  font-medium rounded-lg text-sm px-2 sm:px-4  lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none   `}
             >
               <p>
                 <FontAwesomeIcon
                   icon={faUser}
-                  className="mr-3 h-[13px] w-[13px]"
+                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
                 />{" "}
               </p>
-              <p>Login</p>
+              <p>Signup</p>
             </Link>
+
+                {/* signIN */}
+
+            
+                <Link
+              href="/Signin"
+              className={`  fill_animation_btn  flex flex-row rounded-[30px] text-white ${
+                theme === "light" ? " text-white" : "bg-blue-700 text-white"
+              } hover:${
+                theme === "light" ? "bg-gray-900" : "bg-blue-700"
+              } focus:ring-2  font-medium rounded-lg text-sm px-[2vw]  sm:px-4  lg:px-4 py-[0.5vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none  ml-0 sm:ml-4`}
+            >
+              <p>
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+                />{" "}
+              </p>
+              <p>Signin</p>
+            </Link>
+
 
             <button
               onClick={() => handleBurgerClick()}
@@ -226,6 +244,25 @@ const Navbar = () => {
                 >
                   Resources
                 </Link>
+              </li>
+              <li>
+              <Link
+              href="/Signup"
+              className={` black_btn  flex sm:hidden  hover:text-white  rounded-[20px] text-white ${
+                theme === "light" ? " text-white" : "bg-blue-700 text-white"
+              } hover:${
+                theme === "light" ? "bg-gray-900" : "bg-blue-700"
+              } focus:ring-2  font-medium rounded-lg text-sm px-2 sm:px-4  lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none mx-3  `}
+            >
+              <p>
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+                />{" "}
+              </p>
+              <p>Signup</p>
+            </Link>
+
               </li>
             </ul>
           </div>
