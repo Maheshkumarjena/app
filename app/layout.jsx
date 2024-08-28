@@ -1,3 +1,4 @@
+
 import React from 'react'
 import "@styles/globals.css";
 import Navbar from '@components/Navbar';
@@ -14,8 +15,8 @@ const RootLayout = ({children}) => {
   return (
 
     
-    <html className='hide-scrollbar' lang='en'>
-    <body className=' dark:bg-gray-900 overflow-x-hidden '>
+    <html className='hide-scrollbar bg' lang='en'>
+    <body className='dark:bg-gray-900 overflow-x-hidden '>
         
 
         <main className='app '>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,13 @@ import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+
+useEffect(() => {
+  
+  return () => {
+    document.documentElement.classList.add("dark");
+  };
+}, []);
 
   const handleThemeToggle = () => {
     dispatch(toggleTheme()); // This will update the theme in the store and localStorage

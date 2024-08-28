@@ -14,9 +14,9 @@ const Page = () => {
     <div className={`w-screen h-screen bg-gradient-to-m-r backdrop-blur-lg ${isDarkMode ? 'bg-gray-900' : 'bg-white'} ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
       <div className="min-h-[90vh] max-w-[330px] m-auto flex flex-col justify-center">
         
-
         <div className="min-w-md sm:mx-auto sm:w-full sm:max-w-md">
-          <div className={`glassmorphism border-[1px] border-black py-8 px-4 shadow sm:rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+          <div className={`glassmorphism border-[1px] border-black py-2 px-4 shadow sm:rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+            <div className="font-bold text-2xl text-center pb-5 ">Signin</div>
             <form className="space-y-6" action="#" method="POST">
               <div>
                 <label htmlFor="email" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>

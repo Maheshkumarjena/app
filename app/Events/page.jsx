@@ -6,6 +6,8 @@ const Events = () => {
   const isDarkMode = theme === "dark";
 
   return (
+    <div className={`w-[100vw]  ${isDarkMode ? "bg-gray-900" : "bg-white"}`} >
+
     <div className={` max-w-[1500px]  ${isDarkMode ? "bg-gray-900" : "bg-white"} p-4`}>
       <h2 className="text-3xl px-[2vw] md:px-4 lg:px-6 text-white font-bold mb-12">Events</h2>
       <div className="flex flex-col grid-cols-9  m-auto md:grid px-[2vw] md:px-4 lg:px-6">
@@ -231,6 +233,8 @@ const Events = () => {
 
       </div>
     </div>
+    </div>
+
   );
 };
 

@@ -11,11 +11,13 @@ const AlumniPage = () => {
   const isDarkMode = theme === "dark";
 
   return (
-    <>
-      <div className="max-w-1500 px-[2vw] md:px-4 lg:px-6">
+    <div className={`w-[100vw] pb-[5vw] ${isDarkMode ? "bg-gray-900" : "bg-white"}`}>
+      <div className={`max-w-1500 px-[2vw] md:px-4 lg:px-6${
+            isDarkMode ? "bg-gray-900" : "bg-white"
+          }`}>
         <div
           className={`pt-[3vw] ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
+            isDarkMode ? "text-gray-300 bg-gray-900 " :  "text-gray-600"
           } outline-none focus:outline-none`}
         >
           <div className="relative flex">
@@ -431,7 +433,7 @@ const AlumniPage = () => {
         </div>
       </div>
       <Alumni renderAll="true" />
-    </>
+    </div>
   );
 };
 

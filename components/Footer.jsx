@@ -20,17 +20,17 @@ const Footer = () => {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <>
+    <div >
 
-<hr className=" mt-[3vw] m-auto w-[96%]"></hr>
       <section
-        className={`pt-3 pb-7 w-full  mt-[6vw] ${
+        className={`pt-3 pb-7 w-full   ${
           theme === "light"
             ? "bg-white text-gray-900 border-gray-200"
             : "bg-gray-900 text-gray-100 border-gray-800"
         }`}
       >
 
+<hr className=" py-[3vw] m-auto w-[96%]"></hr>
 
         <div className="mx-auto max-w-[1500px] px-[2vw] md:px-4  m-auto">
           <div
@@ -457,7 +457,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
