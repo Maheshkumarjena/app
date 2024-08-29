@@ -15,7 +15,7 @@ const Page = () => {
         <div
             className={`w-screen max-w-[1500px] ${
                 theme === 'dark' ? 'bg-gray-900 ' : 'bg-white '
-            }  pb-8 mt-8 shadow-xl  sm:mx-auto  sm:px-10`}
+            }  py-8  shadow-xl  sm:mx-auto  sm:px-10`}
         >
             <div className="mx-auto px-[2vw] md:px-4">
                 <div

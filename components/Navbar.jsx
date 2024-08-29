@@ -13,13 +13,8 @@ const Navbar = () => {
 useEffect(() => {
   
   return () => {
-    const theme = useSelector((state) => state.theme);
-    if(theme==='dark'){
-      document.documentElement.classList.add("dark");
-    }
-    else{
-      document.documentElement.classList.remove("light");
-    }
+    
+    document.documentElement.classList.add("dark");
   };
 }, []);
 
