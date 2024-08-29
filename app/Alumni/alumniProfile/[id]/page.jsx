@@ -24,22 +24,25 @@ const AlumniProfile = ({ params }) => {
           <img
             src={alumni.coverImage || "../../assets/Images/logo.png"}
             alt="User Cover"
-            className="w-full xl:h-[20rem] lg:h-[18rem] md:h-[16rem] sm:h-[3vw] xs:h-[3rem]"
+            className="w-full h-auto "
           />
         <hr className={`${theme==="light" ? " bg-blue-500":" text-bg-gray-500"}`}></hr>
-          <div className="sm:w-[80%] xs:w-[90%] mx-auto flex flex-row ">
+          <div className=" mx-auto flex flex-row gap-5 ">
             <img
               src={alumni.image}
               alt="User Profile"
-              className="rounded-md lg:w-[12rem] lg:h-[12rem] md:w-[10rem] md:h-[10rem] sm:w-[8rem] sm:h-[8rem] xs:w-[7rem] xs:h-[7rem] outline outline-2 outline-offset-2 outline-blue-500 relative lg:bottom-[5rem] sm:bottom-[4rem] xs:bottom-[3rem] sm:mr-4"
+              className="  xl:w-[18rem] xl:h-[18rem]  w-[30vw] h-[30vw]   outline outline-2 outline-offset-2 outline-blue-500 relative -top-[10vw] lg:-top-[8vw] -left-[12vw] md:-left-[20vw]  rounded-full "
             />
-            
-            <h1 className="w-full text-left my-4 sm:mx-4 xs:pl-4 text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif">
+
+        <div className='relative  -left-[12vw] md:-left-[20vw]  '>
+
+            <h1 className="w-full  text-left my-4  text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif ">
               {alumni.name} 
             </h1>
+        </div>
           </div>
 
-          <div className="xl:w-[80%] lg:w-[90%] md:w-[90%] sm:w-[92%] xs:w-[90%] mx-auto flex flex-col gap-4 items-center relative lg:-top-8 md:-top-6 sm:-top-4 xs:-top-4">
+          <div className="xl:w-[80%] lg:w-[90%] w-[90%]  mx-auto flex flex-col gap-4 items-center relative lg:-top-8 -top-6">
             <p className="w-fit text-gray-700 dark:text-gray-400 text-md">
               {alumni.bio}
             </p>

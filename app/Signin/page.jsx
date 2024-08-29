@@ -1,12 +1,33 @@
 "use client"
 import "@styles/globals.css";
+import axios from "axios";
 import React from 'react';
 import Link from 'next/link';
+import { useState } from "react";
 import { useSelector } from 'react-redux'; // Use 'useSelector' correctly
 
 const Page = () => {
-  const theme = useSelector((state) => state.theme); // Get the theme from Redux
+  const theme = useSelector((state) => state.theme); 
   const isDarkMode = theme === 'dark';
+
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3001/signin',
+        {  // Ensure this URL is correct
+        email,
+        password
+      });
+      console.log(response);
+      console.log('Submitted successfully');
+    } catch (err) {
+      console.error(err);
+      console.log('Submission unsuccessful');
+    }
+  };
 
   
 
@@ -17,7 +38,7 @@ const Page = () => {
         <div className="min-w-md sm:mx-auto sm:w-full sm:max-w-md">
           <div className={`glassmorphism border-[1px] border-black py-2 px-4 shadow sm:rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
             <div className="font-bold text-2xl text-center pb-5 ">Signin</div>
-            <form className="space-y-6" action="#" method="POST">
+            <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
               <div>
                 <label htmlFor="email" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   Email address
@@ -28,6 +49,8 @@ const Page = () => {
                     name="email"
                     type="email"
                     autoComplete="email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
                     required
                     className={`appearance-none rounded-md relative block w-full px-3 py-2 border ${isDarkMode ? 'border-gray-700' : 'border-gray-300'} placeholder-gray-500 ${isDarkMode ? 'text-white' : 'text-gray-900'} focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm`}
                     placeholder="Enter your email address"
@@ -44,6 +67,8 @@ const Page = () => {
                     id="password"
                     name="password"
                     type="password"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
                     autoComplete="current-password"
                     required
                     className={`appearance-none rounded-md relative block w-full px-3 py-2 border ${isDarkMode ? 'border-gray-700' : 'border-gray-300'} placeholder-gray-500 ${isDarkMode ? 'text-white' : 'text-gray-900'} focus:outline-none focus:ring-blue-500 focus:border-black focus:z-10 sm:text-sm bg-transparent`}
