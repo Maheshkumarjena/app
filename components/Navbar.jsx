@@ -1,52 +1,77 @@
 "use client";
-
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faUser } from "@fortawesome/free-solid-svg-icons";
 import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
+import AlumniCard from "./AlumniCard";
+import { login,logout } from "@Lib/store/features/user/userSlice";
+import axios from "axios";
+
+
+
 
 const Navbar = () => {
-  const dispatch = useDispatch();
 
-useEffect(() => {
-  
-  return () => {
+  const dispatch = useDispatch();
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const user = useSelector((state) => state.user.users[0]);
+  // state.user.users[0]: Retrieves the first user in the users array from the store.
+  const theme=useSelector((state)=>state.theme);
+
+  useEffect(() => { 
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/verify', {
+          withCredentials: true, // Include cookies
+        });
+        if (response.data.status) {
+          dispatch(login(response.data.user)); // Dispatch login action with user data
+        } 
+      } catch (err) {
+        console.error('Verification failed:', err.message);
+        dispatch(logout()); // Dispatch logout action in case of error
+      }
+    };
+
+    fetchUser();
+    document.documentElement.classList.add(theme === "dark" ? "dark" : "light");
+  }, [dispatch]);
+
+  useEffect(() => {
     
-    document.documentElement.classList.add("dark");
-  };
-}, []);
+    return () => {
+      document.documentElement.classList.add(theme === "dark" ? "dark" : "light");
+    };
+  }, [theme]);
+
+
 
   const handleThemeToggle = () => {
     dispatch(toggleTheme()); // This will update the theme in the store and localStorage
     document.documentElement.classList.toggle("dark", theme === "light");
   };
-  
- 
-  
-  const  handleBurgerClick =()=>{
-    console.log('handle burger click')
-    const menu = document.querySelector('.ulElement');
-    console.log(menu)
-    menu.classList.toggle('addAnimation');
-    menu.classList.toggle('removeAnimation');
-    document.querySelector(".cross").classList.toggle("hidden")
-    document.querySelector(".burger").classList.toggle("hidden")
-    if(menu.classList.contains("hidden")){
-            menu.classList.remove('hidden')
-            
-    }
-    else if(!menu.classList.contains("hidden")){
-        setTimeout(() => {
-            menu.classList.add('hidden')
-        }, 200);
-    }
-   
-}
 
 
-  const theme = useSelector((state) => state.theme);
+
+  const handleBurgerClick = () => {
+    console.log("handle burger click");
+    const menu = document.querySelector(".ulElement");
+    console.log(menu);
+    menu.classList.toggle("addAnimation");
+    menu.classList.toggle("removeAnimation");
+    document.querySelector(".cross").classList.toggle("hidden");
+    document.querySelector(".burger").classList.toggle("hidden");
+    if (menu.classList.contains("hidden")) {
+      menu.classList.remove("hidden");
+    } else if (!menu.classList.contains("hidden")) {
+      setTimeout(() => {
+        menu.classList.add("hidden");
+      }, 200);
+    }
+  };
+
 
   return (
     <div className="overflow-x-hidden sticky top-0 ">
@@ -82,7 +107,7 @@ useEffect(() => {
                 theme === "dark" ? "dark:bg-gray-900" : "bg-white"
               }`}
             >
-              <button 
+              <button
                 onClick={handleThemeToggle}
                 className={` rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center`}
               >
@@ -96,43 +121,58 @@ useEffect(() => {
               </button>
             </div>
 
+            {/* signUP */}
 
-            <Link
-              href="/Signup"
-              className={` black_btn  hidden sm:flex  rounded-[20px] text-white ${
-                theme === "light" ? " text-white" : "bg-blue-700 text-white"
-              } hover:${
-                theme === "light" ? "bg-gray-900" : "  text-white"
-              } focus:ring-2  font-medium rounded-lg text-sm px-2 sm:px-4  lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none   `}
-            >
-              <p>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
-                />{" "}
-              </p>
-              <p>Signup</p>
-            </Link>
+{loggedIn ? <div>
+  <Link
+      href="/Signup"
+      className={`black_btn hidden sm:flex rounded-[20px] text-white ${
+        theme === "light" ? "text-white" : "bg-blue-700 text-white"
+      } hover:${theme === "light" ? "bg-gray-900" : "bg-blue-700"} focus:ring-2 font-medium rounded-lg text-sm px-2 sm:px-4 lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none`}
+    >
+      <p>
+        <FontAwesomeIcon
+          icon={faUser}
+          className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+        />{" "}
+      </p>
+      <p>{user.name}</p>
+    </Link>
 
-                {/* signIN */}
+</div>  : (
+  <div className="flex flex-row">
+    <Link
+      href="/Signup"
+      className={`black_btn hidden sm:flex rounded-[20px] text-white ${
+        theme === "light" ? "text-white" : "bg-blue-700 text-white"
+      } hover:${theme === "light" ? "bg-gray-900" : "bg-blue-700"} focus:ring-2 font-medium rounded-lg text-sm px-2 sm:px-4 lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none`}
+    >
+      <p>
+        <FontAwesomeIcon
+          icon={faUser}
+          className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+        />{" "}
+      </p>
+      <p>Signup</p>
+    </Link>
 
-            
-                <Link
-              href="/Signin"
-              className={`  fill_animation_btn  flex flex-row rounded-[30px] text-white ${
-                theme === "light" ? " text-white" : "bg-blue-700 text-white"
-              } hover:${
-                theme === "light" ? "bg-gray-900" : "bg-blue-700"
-              } focus:ring-2  font-medium rounded-lg text-sm px-[2vw]  sm:px-4  lg:px-4 py-[0.5vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none  ml-0 sm:ml-4`}
-            >
-              <p>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
-                />{" "}
-              </p>
-              <p>Signin</p>
-            </Link>
+    <Link
+      href="/Signin"
+      className={`fill_animation_btn flex flex-row rounded-[30px] text-white ${
+        theme === "light" ? "text-white" : "bg-blue-700 text-white"
+      } hover:${theme === "light" ? "bg-gray-900" : "bg-blue-700"} focus:ring-2 font-medium rounded-lg text-sm px-[2vw] sm:px-4 lg:px-4 py-[0.5vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none ml-0 sm:ml-4`}
+    >
+      <p>
+        <FontAwesomeIcon
+          icon={faUser}
+          className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+        />{" "}
+      </p>
+      <p>Signin</p>
+    </Link>
+    </div>
+)
+}
 
 
             <button
@@ -143,7 +183,7 @@ useEffect(() => {
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className="burger w-6 h-6" 
+                className="burger w-6 h-6"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -216,19 +256,7 @@ useEffect(() => {
                   Alumni
                 </Link>
               </li>
-              {/* student  */}
-              {/* <li>
-                <Link
-                  href="Students"
-                  className={`block py-2 pl-3 pr-4 ${
-                    theme === "light"
-                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
-                      : "text-white border-gray-800 hover:bg-gray-700"
-                  } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
-                >
-                  Students
-                </Link>
-              </li> */}
+
               <li>
                 <Link
                   href="Events"
@@ -253,24 +281,24 @@ useEffect(() => {
                   Resources
                 </Link>
               </li>
+              {/* Signup */}
               <li>
-              <Link
-              href="/Signup"
-              className={` black_btn  flex sm:hidden  hover:text-white  rounded-[20px] text-white ${
-                theme === "light" ? " text-white" : "bg-blue-700 text-white"
-              } hover:${
-                theme === "light" ? "bg-gray-900" : "bg-blue-700"
-              } focus:ring-2  font-medium rounded-lg text-sm px-2 sm:px-4  lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none mx-3  `}
-            >
-              <p>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
-                />{" "}
-              </p>
-              <p>Signup</p>
-            </Link>
-
+                <Link
+                  href="/Signup"
+                  className={` black_btn  flex sm:hidden  hover:text-white  rounded-[20px] text-white ${
+                    theme === "light" ? " text-white" : "bg-blue-700 text-white"
+                  } hover:${
+                    theme === "light" ? "bg-gray-900" : "bg-blue-700"
+                  } focus:ring-2  font-medium rounded-lg text-sm px-2 sm:px-4  lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none mx-3  `}
+                >
+                  <p>
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      className="mr-1 sm:mr-2 md:mr-3 h-[13px] w-[13px]"
+                    />{" "}
+                  </p>
+                  <p>Signup</p>
+                </Link>
               </li>
             </ul>
           </div>

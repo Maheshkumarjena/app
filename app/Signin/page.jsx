@@ -10,20 +10,25 @@ const Page = () => {
   const theme = useSelector((state) => state.theme); 
   const isDarkMode = theme === 'dark';
 
+
+// Example usage
+
+
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
  
-  const handleSubmit = async (e) => {
+  const logIn = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3001/signin',
         {  // Ensure this URL is correct
         email,
         password
-      });
+      })
       console.log(response);
       console.log('Submitted successfully');
-    } catch (err) {
+    } 
+      catch (err) {
       console.error(err);
       console.log('Submission unsuccessful');
     }
@@ -38,7 +43,7 @@ const Page = () => {
         <div className="min-w-md sm:mx-auto sm:w-full sm:max-w-md">
           <div className={`glassmorphism border-[1px] border-black py-2 px-4 shadow sm:rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
             <div className="font-bold text-2xl text-center pb-5 ">Signin</div>
-            <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
+            <form onSubmit={logIn} className="space-y-6" action="#" method="POST">
               <div>
                 <label htmlFor="email" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   Email address
