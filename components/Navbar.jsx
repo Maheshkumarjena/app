@@ -4,8 +4,8 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faUser } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,13 @@ const Navbar = () => {
 useEffect(() => {
   
   return () => {
-    document.documentElement.classList.add("dark");
+    const theme = useSelector((state) => state.theme);
+    if(theme==='dark'){
+      document.documentElement.classList.add("dark");
+    }
+    else{
+      document.documentElement.classList.remove("light");
+    }
   };
 }, []);
 
