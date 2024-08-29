@@ -48,7 +48,7 @@ useEffect(() => {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden sticky top-0 ">
       <nav
         className={`navbar ${
           theme === "light"
