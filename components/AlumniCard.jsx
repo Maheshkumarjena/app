@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useDispatch,useSelector } from "react-redux";
 import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
 
-const AlumniCard = ({image ,name , title, company,href ,id}) => {
+const AlumniCard = ({image ,name , title, company ,id}) => {
     const theme = useSelector((state) => state.theme);
 
   return (

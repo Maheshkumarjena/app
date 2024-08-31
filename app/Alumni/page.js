@@ -4,12 +4,14 @@ import { useSelector } from "react-redux";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Alumni from "@components/Alumni";
 import AlumniCard from "@components/AlumniCard";
-import alumniProfiles from "@app/StaticData";
+// import alumniProfiles from "@app/StaticData";
+import { useEffect ,useState } from "react";
+import axios from "axios";
 
 const AlumniPage = () => {
   const theme = useSelector((state) => state.theme);
   const isDarkMode = theme === "dark";
-
+  
   return (
     <div className={`w-[100vw] pb-[5vw] ${isDarkMode ? "bg-gray-900" : "bg-white"}`}>
       <div className={`max-w-1500 px-[2vw] md:px-4 lg:px-6${

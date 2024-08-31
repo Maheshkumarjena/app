@@ -125,7 +125,7 @@ const Navbar = () => {
 
 {loggedIn ? <div>
   <Link
-      href="/Signup"
+      href="/profilePage"
       className={`black_btn hidden sm:flex rounded-[20px] text-white ${
         theme === "light" ? "text-white" : "bg-blue-700 text-white"
       } hover:${theme === "light" ? "bg-gray-900" : "bg-blue-700"} focus:ring-2 font-medium rounded-lg text-sm px-2 sm:px-4 lg:px-4 py-[1vw] md:py-1.5 sm:mr-2 lg:mr-0 focus:outline-none`}

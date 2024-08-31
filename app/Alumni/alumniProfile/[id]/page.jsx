@@ -1,21 +1,39 @@
 // app/Alumni/[id].jsx
-"use client"
-import React from 'react';  // Add this line
-import Image from 'next/image';
-import alumniProfiles from '@app/StaticData';
-import { useSelector } from 'react-redux';
-// import {logo} from '@public/assets/Images'
-const AlumniProfile = ({ params }) => {
-  const id = params.id;
+"use client";
+import React from "react"; // Add this line
+import Image from "next/image";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-  // Find the alumni by ID
-  const alumni = alumniProfiles.find((alum) => alum.id === parseInt(id));
+
+
+const AlumniProfile = ({ params }) => {
+  const [alumnis, setAlumnis] = useState([]);
+  const id = params.id;
+  const alumni = alumnis.find((alum) => alum._id === id);
+  console.log("Params id", id);
+
+  const theme = useSelector((state) => state.theme);
+  useEffect(() => {
+    const getUser = () => {
+      axios
+        .get("http://localhost:3001/getUser")
+        .then((response) =>
+          setAlumnis(
+            response.data.filter((alumnis) => alumnis.type === "alumni")
+          )
+        )
+        .catch((err) => console.log(err));
+    };
+    getUser();
+  }, []);
+
 
   if (!alumni) {
     return <p>Alumni not found.</p>;
   }
 
-  const theme = useSelector((state) => state.theme);
 
   return (
     <>
@@ -26,7 +44,11 @@ const AlumniProfile = ({ params }) => {
             alt="User Cover"
             className="w-full h-auto "
           />
-        <hr className={`${theme==="light" ? " bg-blue-500":" text-bg-gray-500"}`}></hr>
+          <hr
+            className={`${
+              theme === "light" ? " bg-blue-500" : " text-bg-gray-500"
+            }`}
+          ></hr>
           <div className=" mx-auto flex flex-row gap-5 ">
             <img
               src={alumni.image}
@@ -34,12 +56,11 @@ const AlumniProfile = ({ params }) => {
               className="  xl:w-[18rem] xl:h-[18rem]  w-[30vw] h-[30vw]   outline outline-2 outline-offset-2 outline-blue-500 relative -top-[10vw] lg:-top-[8vw] -left-[12vw] md:-left-[20vw]  rounded-full "
             />
 
-        <div className='relative  -left-[12vw] md:-left-[20vw]  '>
-
-            <h1 className="w-full  text-left my-4  text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif ">
-              {alumni.name} 
-            </h1>
-        </div>
+            <div className="relative  -left-[12vw] md:-left-[20vw]  ">
+              <h1 className="w-full  text-left my-4  text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif ">
+                {alumni.name}
+              </h1>
+            </div>
           </div>
 
           <div className="xl:w-[80%] lg:w-[90%] w-[90%]  mx-auto flex flex-col gap-4 items-center relative lg:-top-8 -top-6">
@@ -55,15 +76,13 @@ const AlumniProfile = ({ params }) => {
                       <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
                         First Name
                       </dt>
-                      <dd className="text-lg font-semibold">
-                        {alumni.name}
-                      </dd>
+                      <dd className="text-lg font-semibold">{alumni.name}</dd>
                     </div>
                     {/* ..... */}
                     <div className="flex flex-col py-3">
                       <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                Positon
-                          </dt>
+                        Positon
+                      </dt>
                       <dd className="text-lg font-semibold">{alumni.title}</dd>
                     </div>
                     {/* ..... */}
@@ -72,7 +91,9 @@ const AlumniProfile = ({ params }) => {
                       <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
                         Company
                       </dt>
-                      <dd className="text-lg font-semibold">{alumni.company}</dd>
+                      <dd className="text-lg font-semibold">
+                        {alumni.company}
+                      </dd>
                     </div>
                     {/* ..... */}
                     <div className="flex flex-col py-3">
@@ -116,7 +137,6 @@ const AlumniProfile = ({ params }) => {
                   </dl>
                 </div>
               </div>
-
             </div>
 
             {/* Social Links */}
@@ -176,7 +196,8 @@ const AlumniProfile = ({ params }) => {
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path fillRule="evenodd"
+                      <path
+                        fillRule="evenodd"
                         d="M12 2.287a10.717 10.717 0 0 0-3.396.654C6.182 4.581 4.564 6.672 4.564 9.014c0 2.552 1.637 4.738 3.887 5.501a4.52 4.52 0 0 0-.409-1.375c-.35-1.16-1.095-2.108-2.021-2.771a3.59 3.59 0 0 1 .83-1.316c.873-.716 2.185-1.287 3.57-1.287 1.386 0 2.697.573 3.57 1.287a3.59 3.59 0 0 1 .83 1.316c-.926.663-1.671 1.611-2.021 2.771a4.52 4.52 0 0 0-.409 1.375c2.25-.763 3.887-2.949 3.887-5.501 0-2.342-1.618-4.433-4.04-5.073A10.717 10.717 0 0 0 12 2.287zm-1.646 6.313a1.37 1.37 0 1 1 2.743 0 1.37 1.37 0 0 1-2.743 0zm-2.453 3.426a1.464 1.464 0 1 1 1.464-1.464 1.464 1.464 0 0 1-1.464 1.464zm5.058 0a1.464 1.464 0 1 1 1.464-1.464 1.464 1.464 0 0 1-1.464 1.464z"
                         clipRule="evenodd"
                       />
@@ -188,7 +209,6 @@ const AlumniProfile = ({ params }) => {
           </div>
         </div>
       </section>
-
     </>
   );
 };

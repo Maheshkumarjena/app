@@ -1,11 +1,35 @@
+"use client"
 import React from 'react'
 import AlumniCard from './AlumniCard';
-import alumniProfiles from '@app/StaticData';
 import { useSelector } from 'react-redux';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+
+
 const Alumni = ({ renderAll, numToShow }) => {
-  const theme=useSelector((state)=>state.theme)
-    // E
-    const dataToRender = renderAll ? alumniProfiles : alumniProfiles.slice(0, numToShow);
+  const theme=useSelector
+  ((state)=>state.theme)
+  
+  const [alumnis,setAlumnis]=useState([]);
+
+  useEffect(()=>{
+     const getUser=()=>{
+        axios.get('http://localhost:3001/getUser')
+        .then((response)=>
+          setAlumnis(response.data.filter((alumnis)=>alumnis.type==='alumni'))
+      )
+      .catch((err)=>
+        console.log(err)
+    )
+  }
+  getUser()
+},[])
+
+console.log(alumnis)
+
+  // E
+    const dataToRender = renderAll ? alumnis : alumnis.slice(0, numToShow);
+
 
     return (
       <div className=   {`w-[100vw] ${theme==="dark" ? "bg-gray-900" : "bg-white"} `}>
@@ -19,7 +43,7 @@ const Alumni = ({ renderAll, numToShow }) => {
                     title={alum.title}
                     company={alum.company}
                     image={alum.image}
-                    id={alum.id}
+                    id={alum._id}
                 />
             ))}
       </div>
