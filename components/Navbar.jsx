@@ -269,18 +269,7 @@ const Navbar = () => {
                   Events
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="Blog"
-                  className={`block py-2 pl-3 pr-4 ${
-                    theme === "light"
-                      ? "text-gray-900 border-b border-gray-100 hover:bg-[#F8F8F8] "
-                      : "text-white border-gray-800 hover:bg-gray-700"
-                  } hover:bg-[#F8F8F8] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-400 lg:p-0`}
-                >
-                  Explore
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href="Resources"
