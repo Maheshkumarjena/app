@@ -26,7 +26,7 @@ const Page = () => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:3001/student',
+        'https://app-backend-virid.vercel.app/student',
         { name, email, dob, password }
         
       );

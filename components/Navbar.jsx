@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => { 
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/verify', {
+        const response = await axios.get('https://app-backend-virid.vercel.app/verify', {
           withCredentials: true, // Include cookies
         });
         if (response.data.status) {

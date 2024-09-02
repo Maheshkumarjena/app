@@ -28,7 +28,7 @@ const Page = () => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:3001/alumni',
+        'https://app-backend-virid.vercel.app/alumni',
         { name, email, dob, password, almaMater, lastYearOfEducation } // Include new fields in the request
       );
       console.log(response);

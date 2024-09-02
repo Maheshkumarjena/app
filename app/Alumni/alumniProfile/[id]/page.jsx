@@ -18,7 +18,7 @@ const AlumniProfile = ({ params }) => {
   useEffect(() => {
     const getUser = () => {
       axios
-        .get("http://localhost:3001/getUser")
+        .get("https://app-backend-virid.vercel.app/getUser")
         .then((response) =>
           setAlumnis(
             response.data.filter((alumnis) => alumnis.type === "alumni")

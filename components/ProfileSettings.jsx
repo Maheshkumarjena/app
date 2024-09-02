@@ -23,7 +23,7 @@ const ProfileSettings = () => {
     const handleSave = (e) => {
         e.preventDefault();
         try {
-            axios.put('http://localhost:3001/editUser'),{
+            axios.put('https://app-backend-virid.vercel.app/editUser'),{
                 name,
                 email,
                 dob,

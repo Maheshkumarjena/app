@@ -20,7 +20,7 @@ const Page = () => {
   const logIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/signin',
+      const response = await axios.post('https://app-backend-virid.vercel.app/signin',
         {  // Ensure this URL is correct
         email,
         password
