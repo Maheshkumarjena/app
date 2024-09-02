@@ -41,7 +41,7 @@ console.log(alumnis)
                 <AlumniCard
                     name={alum.name}
                     title={alum.title}
-                    company={alum.company}
+                    college={alum.collegeName}
                     image={alum.image}
                     id={alum._id}
                 />

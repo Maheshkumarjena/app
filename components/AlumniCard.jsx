@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useDispatch,useSelector } from "react-redux";
 import { toggleTheme } from "@Lib/store/features/theme/themeSlice";
 
-const AlumniCard = ({image ,name , title, company ,id}) => {
+const AlumniCard = ({college ,name , title, company ,id}) => {
     const theme = useSelector((state) => state.theme);
 
   return (
@@ -16,7 +16,7 @@ const AlumniCard = ({image ,name , title, company ,id}) => {
   >
     <Link href={`Alumni/alumniProfile/${id}`} >
       <img
-        src={image}
+        src="https://images.pexels.com/photos/25391390/pexels-photo-25391390/free-photo-of-mezuniyet-ogrencisi-furkan.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt={name}
         className={`w-full max-h-[150px] md:max-h-[170px] lg:max-h-[270px] rounded-t-lg object-cover ${
           theme === "light" ? "bg-white" : "bg-gray-700"
@@ -31,7 +31,7 @@ const AlumniCard = ({image ,name , title, company ,id}) => {
         <p className={`text-[8px] md:text-sm ${
           theme === "light" ? "text-gray-600" : "text-gray-400"
         }`}>
-          {title} at {company}
+          alumni of {college}
         </p>
       </div>
     </Link>
